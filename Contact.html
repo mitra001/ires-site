@@ -3,19 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us • REU Site</title>
+  <title>Contact • REU Site</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header (mark Contact Us active) -->
-  <header class="header">
-    <div class="container navbar" role="navigation" aria-label="Main">
-      <a class="brand" href="index.html" aria-label="Site home">
-        <div>
-          <div class="brand__title">Undergraduate Research in Consumer Networking Technologies</div>
-          <small class="brand__subtitle">REU Site • University Program</small>
-        </div>
-      </a>
+  <header class="header navbar--light">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><div><div class="brand__title">REU Site</div><small class="brand__subtitle">University Program</small></div></a>
       <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
       <nav id="navMenu" class="nav">
         <a href="index.html">Overview</a>
@@ -23,32 +17,44 @@
         <a href="Eligibility.html">Eligibility</a>
         <a href="Dates.html">Important Dates</a>
         <a href="Apply.html">Apply</a>
-        <a href="Contact.html" class="active">Contact Us</a>
+        <a class="active" href="Contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero section--highlight">
     <div class="container wrap">
       <h1>Contact Us</h1>
-      <p>Program leads and administrative contacts.</p>
+      <p>Provide the main contact email, office location, and response window.</p>
     </div>
   </section>
 
   <main class="section">
     <div class="container grid">
       <div class="col-12 card">
-        <p><strong>Email:</strong> <a href="mailto:reu@example.edu">reu@example.edu</a></p>
-        <p><strong>Address:</strong> Department / College, University, City, State ZIP</p>
+        <h2>Program Contacts</h2>
+        <p><strong>Director:</strong> Name, Title, Department<br>
+           <strong>Email:</strong> <a href="mailto:someone@example.edu">someone@example.edu</a></p>
+      </div>
+
+      <div class="col-12 card">
+        <h2>General Inquiry</h2>
+        <form onsubmit="return false;">
+          <label for="name">Name</label><br>
+          <input id="name" type="text" placeholder="Your name"><br><br>
+          <label for="email">Email</label><br>
+          <input id="email" type="email" placeholder="you@example.com"><br><br>
+          <label for="msg">Message</label><br>
+          <textarea id="msg" rows="5" placeholder="Your message"></textarea><br><br>
+          <button class="btn btn--gold" type="submit">Send (placeholder)</button>
+        </form>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer footer--light">
     <div class="container">
-      <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
-      <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
+      <div>&copy; <span id="year"></span> REU Site.</div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
