@@ -1,171 +1,160 @@
 /* ============================
-   Mizzou Yellow–Black Theme
+   Mizzou Theme: Black & Gold
    ============================ */
 
-/* 1) Palette (root variables) */
-:root {
-  /* Brand colors */
-  --miz-gold: #FDB719;             /* MU Gold / Pantone 124 C */
-  --miz-gold-700: #E1A40F;         /* darker gold for hover/active */
-  --miz-gold-050: #FFF3D1;         /* soft gold wash for sections */
-
-  --blk: #0A0A0A;                  /* near-black for text/surfaces */
-  --white: #FFFFFF;
-
-  /* Text defaults */
-  --text: var(--blk);
-  --text-inverse: var(--white);
-
-  /* Links tuned for both light/dark contexts */
-  --link: #946400;                 /* readable “golden brown” link */
-  --link-hover: var(--miz-gold-700);
-
-  /* Focus ring (meets AA on both gold/black) */
-  --focus: #005BBB;
-
-  /* Borders / subtle strokes */
-  --border: rgba(0,0,0,0.22);
+/* Palette */
+:root{
+  --miz-black:#000000;
+  --miz-gold:#F1B82D;
+  --white:#ffffff;
+  --text:#111111;
+  --text-dim:#444444;
+  --link:#004B87; /* optional for content links if you want blue */
 }
 
-/* 2) Global adjustments (optional but recommended) */
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover, a:focus {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
-a:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
+/* Base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.55;
+  color:var(--text);
+  background:var(--miz-gold);
 }
 
-/* 3) Utilities for quick theming
-   Apply these classes to ANY container (section, header, card, etc.)
-   to flip between the two brand treatments.
+/* Generic containers */
+.container{
+  max-width:1140px;
+  width:100%;
+  margin-left:16px;     /* <<< left-align here */
+  margin-right:auto;    /* keep fluid on the right */
+}
+
+/* ================= Header & Top Nav ================= */
+.header{
+  background:var(--miz-black);
+  color:var(--miz-gold);
+  border-bottom:2px solid var(--miz-gold);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:2rem 0;
+}
+
+/* Site title (not a link) */
+.brand{display:inline-flex;gap:.5rem;align-items:baseline}
+.brand__title{
+  color:var(--miz-gold);
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:.2px;
+  line-height:1.2;
+  cursor:default;
+}
+
+/* Top navigation */
+.nav{
+  display:flex;gap:1.25rem;align-items:center;
+}
+.nav a{
+  color:var(--miz-gold);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  font-weight:600;
+}
+.nav a:hover,.nav a:focus{color:#ffd166}
+.nav a[aria-current="page"]{text-decoration:none;border-bottom:2px solid var(--miz-gold)}
+
+/* Hamburger for mobile */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  color:var(--miz-gold);
+  border:2px solid var(--miz-gold);
+  border-radius:8px;
+  padding:.35rem .55rem;
+  font-size:1.2rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+/* ================= Main: Sidebar + Content ================= */
+.shell{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:1.25rem;
+  padding:1.25rem 0 2rem 0;
+}
+
+/* Sidebar */
+.sidebar{
+  background:var(--miz-black);
+  border:2px solid var(--miz-gold);
+  border-radius:10px;
+  padding:.6rem;
+  position:sticky;top:12px;align-self:start;
+}
+.sidebar h2{
+  margin:.25rem 0 .5rem 0;
+  font-size:1rem;color:var(--miz-black);
+  padding:.5rem; border-bottom:1px solid var(--miz-black);
+}
+.nav-vertical{list-style:none;margin:0;padding:.25rem}
+.nav-vertical li{margin:.15rem 0}
+.nav-vertical a{
+  display:block;
+  text-decoration:none;
+  color:var(--miz-black);
+  background:#f8f8f8;
+  border:1px solid var(--miz-black);
+  border-radius:8px;
+  padding:.55rem .75rem;
+  font-weight:600;
+}
+.nav-vertical a:hover,
+.nav-vertical a[aria-current="page"]{
+  background:var(--miz-black);
+  color:var(--miz-gold);
+}
+
+/* Content card */
+.content{
+  background:var(--white);
+  border:2px solid var(--miz-black);
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.content h1{margin-top:.25rem;font-size:1.6rem}
+.content h2{margin-top:1.25rem;font-size:1.25rem}
+.content p,.content li{color:var(--text-dim)}
+/* If you prefer blue links inside articles, uncomment:
+.content a{color:var(--link)}
 */
 
-/* Black background + Mizzou Gold text */
-.bg-black        { background: var(--blk) !important; color: var(--miz-gold) !important; }
-.bg-black a      { color: var(--miz-gold); }
-.bg-black a:hover{ color: var(--white); }
-.text-gold       { color: var(--miz-gold) !important; }
-
-/* Mizzou Gold background + black text */
-.bg-gold         { background: var(--miz-gold) !important; color: var(--blk) !important; }
-.bg-gold a       { color: var(--blk); text-decoration: underline; }
-.bg-gold a:hover { color: var(--white); }
-.text-black      { color: var(--blk) !important; }
-
-/* Soft gold highlight band (for hero strips, notices) */
-.section--highlight { background: var(--miz-gold-050) !important; }
-
-/* 4) Components (buttons, navbar, footer) */
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  border: 1px solid transparent;
+/* ================= Footer ================= */
+.footer{
+  margin-top:2rem;
+  background:var(--miz-black);
+  color:var(--miz-gold);
+  border-top:2px solid var(--miz-gold);
 }
-
-/* Primary (gold background, black text) */
-.btn--gold {
-  background: var(--miz-gold);
-  color: var(--blk);
-  border-color: var(--blk);
+.footer .inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.9rem 0;
+  font-size:.95rem;
 }
-.btn--gold:hover { background: var(--miz-gold-700); }
+.footer a{color:var(--miz-gold);text-decoration:none}
+.footer a:hover{text-decoration:underline}
 
-/* Inverse / dark (black background, gold text) */
-.btn--black {
-  background: var(--blk);
-  color: var(--miz-gold);
-  border-color: var(--blk);
-}
-.btn--black:hover { filter: brightness(1.06); }
+/* ================= Responsive ================= */
+@media (max-width: 900px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{position:static}
 
-/* Outline variants (useful on colored sections) */
-.btn--gold-outline {
-  background: transparent;
-  color: var(--miz-gold);
-  border-color: var(--miz-gold);
-}
-.btn--gold-outline:hover {
-  background: var(--miz-gold);
-  color: var(--blk);
-}
-
-.btn--black-outline {
-  background: transparent;
-  color: var(--blk);
-  border-color: var(--blk);
-}
-.btn--black-outline:hover {
-  background: var(--blk);
-  color: var(--miz-gold);
-}
-
-/* Navbar and footer presets you can opt into */
-.navbar--black { background: var(--blk); color: var(--miz-gold); }
-.navbar--black a { color: var(--miz-gold); }
-.navbar--black a:hover { color: var(--white); }
-
-.footer--black { background: var(--blk); color: var(--miz-gold); }
-.footer--black a { color: var(--miz-gold); }
-.footer--black a:hover { color: var(--white); }
-
-/* Cards: keep structure but let you add an accent border/shadow */
-.card--accent {
-  border: 1px solid var(--blk);
-  box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.12);
-}
-
-/* Forms (remain readable on both schemes) */
-input, select, textarea {
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.6rem;
-}
-input:focus, select:focus, textarea:focus {
-  outline: 3px solid var(--focus);
-  border-color: var(--blk);
-}
-
-/* ============================
-   ADDITION: Link-styled CTA
-   ============================ */
-
-/* Gold, link-like CTA with underline-only on hover (no filled box) */
-.link-cta {
-  background: transparent;
-  border: 0;
-  padding: 0;                 /* remove button box */
-  color: var(--miz-gold);
-  font-weight: 700;
-  text-decoration: none;
-  display: inline;            /* behave like a regular link */
-}
-
-/* Underline only on hover/focus; keep color gold */
-.link-cta:hover,
-.link-cta:focus {
-  text-decoration: underline;
-  color: var(--miz-gold);
-}
-
-/* Preserve accessible focus */
-.link-cta:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
-
-/* Inside dark bands, keep gold on hover (override .bg-black a:hover → white) */
-.bg-black .link-cta:hover,
-.bg-black .link-cta:focus {
-  color: var(--miz-gold);
-  text-decoration: underline;
+  .nav{display:none}              /* hide top nav */
+  .nav.is-open{display:flex;flex-direction:column;gap:.75rem;padding:.75rem 0}
+  .nav-toggle{display:inline-block}
 }

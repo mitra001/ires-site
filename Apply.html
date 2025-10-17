@@ -4,71 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apply • REU Site</title>
-  <!-- Single stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <meta name="theme-color" content="#0A0A0A">
 </head>
 <body>
-  <!-- Header (Apply active) -->
-  <header class="header navbar--black">
-    <div class="container navbar" role="navigation" aria-label="Main">
-      <a class="brand" href="index.html" aria-label="Site home">
-        <div>
-          <div class="brand__title text-gold">Undergraduate Research in Consumer Networking Technologies</div>
-          <small class="brand__subtitle">REU Site • University Program</small>
-        </div>
-      </a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <nav id="navMenu" class="nav">
-        <a href="index.html">Overview</a>
-        <a href="Highlights.html">Highlights</a>
-        <a href="Eligibility.html">Eligibility</a>
-        <a href="Dates.html">Important Dates</a>
-        <a href="Apply.html" class="active">Apply</a>
-        <a href="Contact.html">Contact Us</a>
-      </nav>
-    </div>
+
+  <!-- Header -->
+  <?-- copy the same header into every page -->
+  <header class="header">
+    <div class="container header-inner" role="navigation" aria-label="Main">
+      <div class="brand" aria-label="Site title">
+        <div class="brand__title" role="heading" aria-level="1">
+          IRES: Advancing Research on Optimizing Collaborative Human-Mobile Robot Operations for Next-Generation Manufacturing and Service Systems
   </header>
 
-  <!-- Hero: black background with Mizzou Gold text -->
-  <section class="hero bg-black">
-    <div class="container wrap">
-      <h1 class="text-gold">Instructions to Apply</h1>
-      <div class="section">
-        <!-- Changed from .btn btn--gold to .link-cta for underline-only hover -->
-        <a class="link-cta" href="Dates.html">Check Dates</a>
-      </div>
-    </div>
-  </section>
+  <div class="container shell">
+    <aside class="sidebar" aria-label="Section Navigation">
+      <ul class="nav-vertical">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="highlights.html">Highlights</a></li>
+        <li><a href="eligibility.html">Eligibility</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </aside>
 
-  <!-- Optional callout: Mizzou Gold background with black text -->
-  <section class="bg-gold">
-    <div class="container wrap">
-      <p class="text-black"><strong>Reminder:</strong> Applications are reviewed on a rolling basis. Please verify deadlines on the <a href="Dates.html" class="text-black">Important Dates</a> page.</p>
-    </div>
-  </section>
+    <main class="content">
+      <h1>How to Apply</h1>
+      <ol>
+        <li>Review <a href="eligibility.html">Eligibility</a> and <a href="dates.html">Important Dates</a>.</li>
+        <li>Prepare a résumé (PDF) and unofficial transcript.</li>
+        <li>Submit through the designated application portal (link to be added).</li>
+      </ol>
+    </main>
+  </div>
 
-  <main class="section">
-    <div class="container grid">
-      <div class="col-12 card card--accent">
-        <ol class="list">
-          <li>Review <a href="Eligibility.html">Eligibility &amp; Requirements</a> and <a href="Dates.html">Important Dates</a>.</li>
-          <li>
-            Submit your application using the official portal:
-            <a class="btn btn--black" href="#" aria-disabled="true">NSF ETAP (placeholder)</a>
-          </li>
-          <li>For any issues with submission, see <a href="Contact.html">Contact Us</a>.</li>
-        </ol>
-        <p class="muted">Your application is complete only after all required materials are received.</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer: black background with Mizzou Gold text -->
-  <footer class="footer footer--black">
-    <div class="container">
-      <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
-      <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
+  <footer class="footer">
+    <div class="container inner">
+      <div>&copy; <span id="year"></span> REU Site</div>
+      
     </div>
   </footer>
 

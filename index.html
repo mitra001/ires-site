@@ -5,69 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Overview • REU Site</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <meta name="theme-color" content="#FFFFFF">
 </head>
 <body>
-  <header class="header navbar--light">
-    <div class="container navbar" role="navigation" aria-label="Main">
-      <a class="brand" href="index.html" aria-label="Site home">
-        <div>
-          <div class="brand__title">Undergraduate Research in Consumer Networking Technologies</div>
-          <small class="brand__subtitle">REU Site • University Program</small>
-        </div>
-      </a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <nav id="navMenu" class="nav">
-        <a class="active" href="index.html">Overview</a>
-        <a href="Highlights.html">Highlights</a>
-        <a href="Eligibility.html">Eligibility</a>
-        <a href="Dates.html">Important Dates</a>
-        <a href="Apply.html">Apply</a>
-        <a href="Contact.html">Contact Us</a>
-      </nav>
-    </div>
+
+  <!-- Header -->
+  <?-- copy the same header into every page -->
+  <header class="header">
+    <div class="container header-inner" role="navigation" aria-label="Main">
+      <div class="brand" aria-label="Site title">
+        <div class="brand__title" role="heading" aria-level="1">
+          IRES: Advancing Research on Optimizing Collaborative Human-Mobile Robot Operations for Next-Generation Manufacturing and Service Systems
   </header>
 
-  <!-- Light hero with soft gold wash -->
-  <section class="hero section--highlight">
-    <div class="container wrap">
-      <h1>Overview</h1>
-      <p>Insert a concise summary of the program’s goals, themes, and student experience.</p>
-      <div class="wrap">
-        <a class="btn btn--gold" href="Apply.html">Apply Now</a>
-        <a class="btn btn--black-outline" href="Dates.html">See Dates</a>
-      </div>
-    </div>
-  </section>
+  <!-- Layout shell -->
+  <div class="container shell">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Section Navigation">
+      <ul class="nav-vertical">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="highlights.html">Highlights</a></li>
+        <li><a href="eligibility.html">Eligibility</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </aside>
 
-  <main class="section">
-    <div class="container grid">
-      <div class="col-12 card">
-        <h2>Research Focus Areas</h2>
-        <ul class="list">
-          <li>Focus Area A — short summary.</li>
-          <li>Focus Area B — short summary.</li>
-          <li>Focus Area C — short summary.</li>
-        </ul>
-      </div>
+    <!-- Main content -->
+    <main class="content">
+      <h1>Program Overview</h1>
+      <p>This Research Experiences for Undergraduates (REU) site exposes students to projects in consumer networking technologies, edge/visual computing, and allied domains. The site uses an accessible layout with a left navigation and a mobile menu.</p>
 
-      <div class="col-12 card">
-        <h2>Program Snapshot</h2>
-        <ul class="list">
-          <li>Duration: 10 weeks (insert months).</li>
-          <li>Support: stipend, housing/meal, travel (as applicable).</li>
-          <li>Workshops, seminars, mentorship, final presentations.</li>
-        </ul>
-      </div>
-    </div>
-  </main>
+      <h2>What You Will Gain</h2>
+      <ul>
+        <li>Mentored research with faculty and graduate students</li>
+        <li>Professional development seminars &amp; workshops</li>
+        <li>Final posters, reports, and presentations</li>
+      </ul>
+    </main>
+  </div>
 
-  <footer class="footer footer--light">
-    <div class="container">
-      <div>&copy; <span id="year"></span> REU Site. All rights reserved.</div>
-      <div class="muted">Sponsored by <span class="btn btn--gold-outline" style="pointer-events:none;">NSF Award (placeholder)</span></div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container inner">
+      <div>&copy; <span id="year"></span> REU Site</div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>

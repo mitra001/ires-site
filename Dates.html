@@ -7,52 +7,45 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header navbar--light">
-    <div class="container navbar">
-      <a class="brand" href="index.html"><div><div class="brand__title">REU Site</div><small class="brand__subtitle">University Program</small></div></a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <nav id="navMenu" class="nav">
-        <a href="index.html">Overview</a>
-        <a href="Highlights.html">Highlights</a>
-        <a href="Eligibility.html">Eligibility</a>
-        <a class="active" href="Dates.html">Important Dates</a>
-        <a href="Apply.html">Apply</a>
-        <a href="Contact.html">Contact Us</a>
-      </nav>
-    </div>
+
+  <!-- Header -->
+  <?-- copy the same header into every page -->
+  <header class="header">
+    <div class="container header-inner" role="navigation" aria-label="Main">
+      <div class="brand" aria-label="Site title">
+        <div class="brand__title" role="heading" aria-level="1">
+          IRES: Advancing Research on Optimizing Collaborative Human-Mobile Robot Operations for Next-Generation Manufacturing and Service Systems
   </header>
 
-  <section class="hero section--highlight">
-    <div class="container wrap">
+  <div class="container shell">
+    <aside class="sidebar" aria-label="Section Navigation">
+      <ul class="nav-vertical">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="highlights.html">Highlights</a></li>
+        <li><a href="eligibility.html">Eligibility</a></li>
+        <li><a href="dates.html">Important Dates</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
       <h1>Important Dates</h1>
-      <p>Key milestones for applications and program timeline.</p>
-    </div>
-  </section>
+      <ul>
+        <li>Applications: January – March</li>
+        <li>Program: 10 weeks (Summer)</li>
+        <li>Final presentations: Last week of program</li>
+      </ul>
+    </main>
+  </div>
 
-  <main class="section">
-    <div class="container grid">
-      <div class="col-12 card card--accent">
-        <table>
-          <thead>
-            <tr><th>Milestone</th><th>Date</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Applications Open</td><td>Month DD, YYYY</td></tr>
-            <tr><td>Priority Deadline</td><td>Month DD, YYYY</td></tr>
-            <tr><td>Final Deadline</td><td>Month DD, YYYY</td></tr>
-            <tr><td>Program Start</td><td>Month DD, YYYY</td></tr>
-            <tr><td>Program End</td><td>Month DD, YYYY</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer footer--light">
-    <div class="container">
-      <div>&copy; <span id="year"></span> REU Site.</div>
+  <footer class="footer">
+    <div class="container inner">
+      <div>&copy; <span id="year"></span> REU Site</div>
+      
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>

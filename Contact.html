@@ -7,56 +7,42 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="header navbar--light">
-    <div class="container navbar">
-      <a class="brand" href="index.html"><div><div class="brand__title">REU Site</div><small class="brand__subtitle">University Program</small></div></a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
-      <nav id="navMenu" class="nav">
-        <a href="index.html">Overview</a>
-        <a href="Highlights.html">Highlights</a>
-        <a href="Eligibility.html">Eligibility</a>
-        <a href="Dates.html">Important Dates</a>
-        <a href="Apply.html">Apply</a>
-        <a class="active" href="Contact.html">Contact Us</a>
-      </nav>
-    </div>
+
+  <!-- Header -->
+  <?-- copy the same header into every page -->
+  <header class="header">
+    <div class="container header-inner" role="navigation" aria-label="Main">
+      <div class="brand" aria-label="Site title">
+        <div class="brand__title" role="heading" aria-level="1">
+          IRES: Advancing Research on Optimizing Collaborative Human-Mobile Robot Operations for Next-Generation Manufacturing and Service Systems
   </header>
 
-  <section class="hero section--highlight">
-    <div class="container wrap">
-      <h1>Contact Us</h1>
-      <p>Provide the main contact email, office location, and response window.</p>
-    </div>
-  </section>
+  <div class="container shell">
+    <aside class="sidebar" aria-label="Section Navigation">
+      <ul class="nav-vertical">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="highlights.html">Highlights</a></li>
+        <li><a href="eligibility.html">Eligibility</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </aside>
 
-  <main class="section">
-    <div class="container grid">
-      <div class="col-12 card">
-        <h2>Program Contacts</h2>
-        <p><strong>Director:</strong> Name, Title, Department<br>
-           <strong>Email:</strong> <a href="mailto:someone@example.edu">someone@example.edu</a></p>
-      </div>
+    <main class="content">
+      <h1>Contact</h1>
+      <p>Email: <a href="mailto:example@missouri.edu">example@missouri.edu</a></p>
+      <p>Address: University of Missouri, Columbia, MO</p>
+    </main>
+  </div>
 
-      <div class="col-12 card">
-        <h2>General Inquiry</h2>
-        <form onsubmit="return false;">
-          <label for="name">Name</label><br>
-          <input id="name" type="text" placeholder="Your name"><br><br>
-          <label for="email">Email</label><br>
-          <input id="email" type="email" placeholder="you@example.com"><br><br>
-          <label for="msg">Message</label><br>
-          <textarea id="msg" rows="5" placeholder="Your message"></textarea><br><br>
-          <button class="btn btn--gold" type="submit">Send (placeholder)</button>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer footer--light">
-    <div class="container">
-      <div>&copy; <span id="year"></span> REU Site.</div>
+  <footer class="footer">
+    <div class="container inner">
+      <div>&copy; <span id="year"></span> REU Site</div>
+      
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
