@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Overview • REU Site</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="theme-color" content="#FFFFFF">
 </head>
 <body>
-  <!-- Header -->
-  <!-- (paste the shared header here; mark Overview active by adding class="active" to the link) -->
-  <header class="header">
+  <header class="header navbar--light">
     <div class="container navbar" role="navigation" aria-label="Main">
       <a class="brand" href="index.html" aria-label="Site home">
         <div>
@@ -19,7 +18,7 @@
       </a>
       <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
       <nav id="navMenu" class="nav">
-        <a href="index.html" class="active">Overview</a>
+        <a class="active" href="index.html">Overview</a>
         <a href="Highlights.html">Highlights</a>
         <a href="Eligibility.html">Eligibility</a>
         <a href="Dates.html">Important Dates</a>
@@ -29,55 +28,44 @@
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Light hero with soft gold wash -->
+  <section class="hero section--highlight">
     <div class="container wrap">
       <h1>Overview</h1>
-      <p>Our REU Site explores consumer networking technologies, including SDN/virtualization, edge visual computing, social VR, mobile sensing, and environment recognition.</p>
-      <div class="section">
-        <a class="badge" href="Apply.html">Apply Now</a>
+      <p>Insert a concise summary of the program’s goals, themes, and student experience.</p>
+      <div class="wrap">
+        <a class="btn btn--gold" href="Apply.html">Apply Now</a>
+        <a class="btn btn--black-outline" href="Dates.html">See Dates</a>
       </div>
     </div>
   </section>
 
   <main class="section">
     <div class="container grid">
-      <div class="col-8">
-        <div class="card">
-          <h3>Program Summary</h3>
-          <p>
-            The program supports ~10 undergraduate students for a 10-week summer session. Students take short courses,
-            attend topical lectures, work with faculty mentors, present weekly progress, and deliver final reports and presentations.
-          </p>
-          <p>
-            Participants build skills to tackle challenges in quality of service, heterogeneity, performance, mobility, security/privacy,
-            and user experience. Alumni are encouraged to present their work at home institutions post-program.
-          </p>
-          <div class="callout">
-            Runs May–July. See <a href="Dates.html">Important Dates</a>. Stipend, housing/meal support (if needed), and travel support are provided.
-          </div>
-        </div>
+      <div class="col-12 card">
+        <h2>Research Focus Areas</h2>
+        <ul class="list">
+          <li>Focus Area A — short summary.</li>
+          <li>Focus Area B — short summary.</li>
+          <li>Focus Area C — short summary.</li>
+        </ul>
       </div>
-      <div class="col-4">
-        <div class="card">
-          <h3>Supported By</h3>
-          <ul class="list">
-            <li>National Science Foundation (NSF)</li>
-            <li>Office of Research</li>
-            <li>Office of Undergraduate Research</li>
-            <li>College of Engineering</li>
-            <li>Department of EECS</li>
-          </ul>
-          <p class="muted">Replace with your unit names and award numbers.</p>
-        </div>
+
+      <div class="col-12 card">
+        <h2>Program Snapshot</h2>
+        <ul class="list">
+          <li>Duration: 10 weeks (insert months).</li>
+          <li>Support: stipend, housing/meal, travel (as applicable).</li>
+          <li>Workshops, seminars, mentorship, final presentations.</li>
+        </ul>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer footer--light">
     <div class="container">
-      <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
-      <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
+      <div>&copy; <span id="year"></span> REU Site. All rights reserved.</div>
+      <div class="muted">Sponsored by <span class="btn btn--gold-outline" style="pointer-events:none;">NSF Award (placeholder)</span></div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
