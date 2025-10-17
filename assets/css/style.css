@@ -134,3 +134,38 @@ input:focus, select:focus, textarea:focus {
   outline: 3px solid var(--focus);
   border-color: var(--blk);
 }
+
+/* ============================
+   ADDITION: Link-styled CTA
+   ============================ */
+
+/* Gold, link-like CTA with underline-only on hover (no filled box) */
+.link-cta {
+  background: transparent;
+  border: 0;
+  padding: 0;                 /* remove button box */
+  color: var(--miz-gold);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline;            /* behave like a regular link */
+}
+
+/* Underline only on hover/focus; keep color gold */
+.link-cta:hover,
+.link-cta:focus {
+  text-decoration: underline;
+  color: var(--miz-gold);
+}
+
+/* Preserve accessible focus */
+.link-cta:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Inside dark bands, keep gold on hover (override .bg-black a:hover → white) */
+.bg-black .link-cta:hover,
+.bg-black .link-cta:focus {
+  color: var(--miz-gold);
+  text-decoration: underline;
+}
