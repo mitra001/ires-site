@@ -1,145 +1,136 @@
-/* ================================
-   Base Layout (structure-first)
-   ================================ */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+/* ============================
+   Mizzou Yellow–Black Theme
+   ============================ */
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.55;
-  font-size: 16px;
-  color: var(--text);
-  background: var(--white);
-}
+/* 1) Palette (root variables) */
+:root {
+  /* Brand colors */
+  --miz-gold: #FDB719;             /* MU Gold / Pantone 124 C */
+  --miz-gold-700: #E1A40F;         /* darker gold for hover/active */
+  --miz-gold-050: #FFF3D1;         /* soft gold wash for sections */
 
-/* Containers & Grid */
-.container { width: min(1100px, 92%); margin: 0 auto; }
-.wrap { padding: 2rem 0; }
-.section { padding: 2.5rem 0; }
-.grid { display: grid; gap: 1.25rem; }
-.col-12 { grid-column: 1 / -1; }
-
-/* Header & Nav */
-.header { position: sticky; top: 0; z-index: 50; }
-.navbar { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
-.brand { display: flex; align-items: center; text-decoration: none; color: inherit; }
-.brand__title { font-weight: 700; font-size: 1.05rem; }
-.brand__subtitle { display: block; font-size: 0.85rem; opacity: 0.85; }
-
-.nav { display: flex; gap: 1rem; align-items: center; }
-.nav a { text-decoration: none; font-weight: 600; }
-.nav a.active { text-decoration: underline; }
-
-.nav-toggle { display: none; cursor: pointer; }
-@media (max-width: 840px) {
-  .nav-toggle { display: inline-block; background: none; border: 1px solid currentColor; padding: 0.35rem 0.5rem; border-radius: 6px; }
-  .nav { display: none; flex-direction: column; padding: 0.5rem 0; }
-  .nav.open { display: flex; }
-}
-
-/* Hero */
-.hero { padding: 2.5rem 0; }
-
-/* Cards, Lists, Tables */
-.card {
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: #fff; /* overridden in dark bands if needed */
-  padding: 1.1rem 1.25rem;
-}
-.list { padding-left: 1.25rem; }
-.list li { margin: 0.5rem 0; }
-
-table { border-collapse: collapse; width: 100%; }
-th, td { padding: 0.65rem 0.6rem; border: 1px solid rgba(0,0,0,0.2); }
-th { text-align: left; }
-
-/* Buttons */
-.btn { display: inline-block; padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid transparent; font-weight: 700; text-decoration: none; }
-
-/* Footer */
-.footer { padding: 1.25rem 0; margin-top: 2rem; }
-
-/* Utilities */
-.muted { opacity: 0.75; }
-.center { text-align: center; }
-
-/* ================================
-   Theme: MU Gold (#FDB719) + Black
-   ================================ */
-:root{
-  --miz-gold: #FDB719;           /* MU Gold / Pantone 124 C */
-  --miz-gold-700: #E1A40F;       /* hover/active */
-  --gold-wash: #FFF5D9;          /* soft gold for highlight bands */
-  --black: #0A0A0A;              /* near-black */
+  --blk: #0A0A0A;                  /* near-black for text/surfaces */
   --white: #FFFFFF;
 
-  --text: var(--black);
+  /* Text defaults */
+  --text: var(--blk);
   --text-inverse: var(--white);
 
-  --link: #8E6400;               /* readable golden-brown on light bg */
+  /* Links tuned for both light/dark contexts */
+  --link: #946400;                 /* readable “golden brown” link */
   --link-hover: var(--miz-gold-700);
-  --focus: #005BBB;              /* accessible focus ring */
+
+  /* Focus ring (meets AA on both gold/black) */
+  --focus: #005BBB;
+
+  /* Borders / subtle strokes */
   --border: rgba(0,0,0,0.22);
 }
 
-a { color: var(--link); }
-a:hover, a:focus { color: var(--link-hover); text-decoration: underline; }
-a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+/* 2) Global adjustments (optional but recommended) */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
 
-h1, h2, h3 { color: var(--black); }
+/* 3) Utilities for quick theming
+   Apply these classes to ANY container (section, header, card, etc.)
+   to flip between the two brand treatments.
+*/
 
-/* Bands */
-.section--highlight { background: var(--gold-wash); }
-.bg-gold { background: var(--miz-gold) !important; color: var(--black) !important; }
-.bg-black { background: var(--black) !important; color: var(--miz-gold) !important; }
-.text-gold { color: var(--miz-gold) !important; }
-.text-black { color: var(--black) !important; }
+/* Black background + Mizzou Gold text */
+.bg-black        { background: var(--blk) !important; color: var(--miz-gold) !important; }
+.bg-black a      { color: var(--miz-gold); }
+.bg-black a:hover{ color: var(--white); }
+.text-gold       { color: var(--miz-gold) !important; }
 
-/* Navbar & Footer (light default; dark optional) */
-.navbar--light { background: var(--white); color: var(--black); border-bottom: 1px solid var(--border); }
-.navbar--light a { color: var(--black); }
-.navbar--light a:hover { color: var(--link-hover); }
+/* Mizzou Gold background + black text */
+.bg-gold         { background: var(--miz-gold) !important; color: var(--blk) !important; }
+.bg-gold a       { color: var(--blk); text-decoration: underline; }
+.bg-gold a:hover { color: var(--white); }
+.text-black      { color: var(--blk) !important; }
 
-.navbar--black { background: var(--black); color: var(--miz-gold); }
-.navbar--black a { color: var(--miz-gold); }
-.navbar--black a:hover { color: var(--white); }
+/* Soft gold highlight band (for hero strips, notices) */
+.section--highlight { background: var(--miz-gold-050) !important; }
 
-.footer--light { background: var(--white); color: var(--black); border-top: 1px solid var(--border); }
-.footer--black { background: var(--black); color: var(--miz-gold); }
+/* 4) Components (buttons, navbar, footer) */
 
 /* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+/* Primary (gold background, black text) */
 .btn--gold {
   background: var(--miz-gold);
-  color: var(--black);
-  border-color: var(--black);
+  color: var(--blk);
+  border-color: var(--blk);
 }
 .btn--gold:hover { background: var(--miz-gold-700); }
 
+/* Inverse / dark (black background, gold text) */
 .btn--black {
-  background: var(--black);
+  background: var(--blk);
   color: var(--miz-gold);
-  border-color: var(--black);
+  border-color: var(--blk);
 }
 .btn--black:hover { filter: brightness(1.06); }
 
+/* Outline variants (useful on colored sections) */
 .btn--gold-outline {
-  background: transparent; color: var(--miz-gold); border-color: var(--miz-gold);
+  background: transparent;
+  color: var(--miz-gold);
+  border-color: var(--miz-gold);
 }
 .btn--gold-outline:hover {
-  background: var(--miz-gold); color: var(--black);
+  background: var(--miz-gold);
+  color: var(--blk);
 }
 
 .btn--black-outline {
-  background: transparent; color: var(--black); border-color: var(--black);
+  background: transparent;
+  color: var(--blk);
+  border-color: var(--blk);
 }
 .btn--black-outline:hover {
-  background: var(--black); color: var(--miz-gold);
+  background: var(--blk);
+  color: var(--miz-gold);
 }
 
-/* Emphasized cards */
-.card--accent { border: 1px solid var(--black); box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.12); }
+/* Navbar and footer presets you can opt into */
+.navbar--black { background: var(--blk); color: var(--miz-gold); }
+.navbar--black a { color: var(--miz-gold); }
+.navbar--black a:hover { color: var(--white); }
 
-/* Forms */
-input, select, textarea { border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem; width: 100%; max-width: 720px; }
-input:focus, select:focus, textarea:focus { outline: 3px solid var(--focus); border-color: var(--black); }
+.footer--black { background: var(--blk); color: var(--miz-gold); }
+.footer--black a { color: var(--miz-gold); }
+.footer--black a:hover { color: var(--white); }
+
+/* Cards: keep structure but let you add an accent border/shadow */
+.card--accent {
+  border: 1px solid var(--blk);
+  box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.12);
+}
+
+/* Forms (remain readable on both schemes) */
+input, select, textarea {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid var(--focus);
+  border-color: var(--blk);
+}
