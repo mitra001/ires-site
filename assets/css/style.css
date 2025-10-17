@@ -1,34 +1,33 @@
-/* Theme: Yellow & Black */
-:root {
-  /* Core brand colors */
-  --yellow: #FFD100;        /* Primary accent */
-  --yellow-600: #E6BC00;    /* Hover/active yellow */
-  --yellow-050: #FFF7CC;    /* Soft yellow background */
+/* ============================
+   Mizzou Yellow–Black Theme
+   ============================ */
 
-  --black: #0A0A0A;         /* Near-black for text/backgrounds */
-  --gray-800: #1F1F1F;      /* Dark surfaces */
-  --gray-600: #3A3A3A;      /* Borders / muted text */
+/* 1) Palette (root variables) */
+:root {
+  /* Brand colors */
+  --miz-gold: #FDB719;             /* MU Gold / Pantone 124 C */
+  --miz-gold-700: #E1A40F;         /* darker gold for hover/active */
+  --miz-gold-050: #FFF3D1;         /* soft gold wash for sections */
+
+  --blk: #0A0A0A;                  /* near-black for text/surfaces */
   --white: #FFFFFF;
 
-  /* Text colors */
-  --text: var(--black);
+  /* Text defaults */
+  --text: var(--blk);
   --text-inverse: var(--white);
-  --muted: #5A5A5A;
 
-  /* Components */
-  --link: #A37F00;          /* Yellow-friendly link color */
-  --link-hover: var(--yellow-600);
-  --border: var(--gray-600);
-  --focus: #005BBB;         /* Accessible focus ring (high contrast) */
+  /* Links tuned for both light/dark contexts */
+  --link: #946400;                 /* readable “golden brown” link */
+  --link-hover: var(--miz-gold-700);
+
+  /* Focus ring (meets AA on both gold/black) */
+  --focus: #005BBB;
+
+  /* Borders / subtle strokes */
+  --border: rgba(0,0,0,0.22);
 }
 
-/* Global reset */
-html, body {
-  background: var(--white);
-  color: var(--text);
-}
-
-/* Links */
+/* 2) Global adjustments (optional but recommended) */
 a {
   color: var(--link);
   text-decoration: none;
@@ -36,72 +35,96 @@ a {
 a:hover, a:focus {
   color: var(--link-hover);
   text-decoration: underline;
-  outline: none;
 }
 a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
-/* Headings */
-h1, h2, h3 {
-  color: var(--black);
-}
+/* 3) Utilities for quick theming
+   Apply these classes to ANY container (section, header, card, etc.)
+   to flip between the two brand treatments.
+*/
+
+/* Black background + Mizzou Gold text */
+.bg-black        { background: var(--blk) !important; color: var(--miz-gold) !important; }
+.bg-black a      { color: var(--miz-gold); }
+.bg-black a:hover{ color: var(--white); }
+.text-gold       { color: var(--miz-gold) !important; }
+
+/* Mizzou Gold background + black text */
+.bg-gold         { background: var(--miz-gold) !important; color: var(--blk) !important; }
+.bg-gold a       { color: var(--blk); text-decoration: underline; }
+.bg-gold a:hover { color: var(--white); }
+.text-black      { color: var(--blk) !important; }
+
+/* Soft gold highlight band (for hero strips, notices) */
+.section--highlight { background: var(--miz-gold-050) !important; }
+
+/* 4) Components (buttons, navbar, footer) */
 
 /* Buttons */
 .btn {
   display: inline-block;
   padding: 0.6rem 1rem;
   border-radius: 6px;
-  border: 1px solid var(--black);
   font-weight: 600;
-  background: var(--yellow);
-  color: var(--black);
+  border: 1px solid transparent;
 }
-.btn:hover { background: var(--yellow-600); }
-.btn--inverse {
-  background: var(--black);
-  color: var(--text-inverse);
-  border-color: var(--black);
-}
-.btn--inverse:hover { filter: brightness(1.05); }
 
-/* Navigation bar */
-.navbar {
-  background: var(--black);
-  color: var(--text-inverse);
-  border-bottom: 1px solid var(--black);
+/* Primary (gold background, black text) */
+.btn--gold {
+  background: var(--miz-gold);
+  color: var(--blk);
+  border-color: var(--blk);
 }
-.navbar a { color: var(--yellow); }
-.navbar a:hover { color: var(--white); }
+.btn--gold:hover { background: var(--miz-gold-700); }
 
-/* Sections / cards */
-.section--highlight {
-  background: var(--yellow-050);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+/* Inverse / dark (black background, gold text) */
+.btn--black {
+  background: var(--blk);
+  color: var(--miz-gold);
+  border-color: var(--blk);
 }
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1rem;
+.btn--black:hover { filter: brightness(1.06); }
+
+/* Outline variants (useful on colored sections) */
+.btn--gold-outline {
+  background: transparent;
+  color: var(--miz-gold);
+  border-color: var(--miz-gold);
 }
+.btn--gold-outline:hover {
+  background: var(--miz-gold);
+  color: var(--blk);
+}
+
+.btn--black-outline {
+  background: transparent;
+  color: var(--blk);
+  border-color: var(--blk);
+}
+.btn--black-outline:hover {
+  background: var(--blk);
+  color: var(--miz-gold);
+}
+
+/* Navbar and footer presets you can opt into */
+.navbar--black { background: var(--blk); color: var(--miz-gold); }
+.navbar--black a { color: var(--miz-gold); }
+.navbar--black a:hover { color: var(--white); }
+
+.footer--black { background: var(--blk); color: var(--miz-gold); }
+.footer--black a { color: var(--miz-gold); }
+.footer--black a:hover { color: var(--white); }
+
+/* Cards: keep structure but let you add an accent border/shadow */
 .card--accent {
-  border-color: var(--black);
-  box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.10);
+  border: 1px solid var(--blk);
+  box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.12);
 }
 
-/* Footer */
-.footer {
-  background: var(--gray-800);
-  color: var(--text-inverse);
-  border-top: 1px solid var(--black);
-}
-.footer a { color: var(--yellow); }
-.footer a:hover { color: var(--white); }
-
-/* Forms (Contact page) */
+/* Forms (remain readable on both schemes) */
 input, select, textarea {
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -109,11 +132,5 @@ input, select, textarea {
 }
 input:focus, select:focus, textarea:focus {
   outline: 3px solid var(--focus);
-  border-color: var(--black);
+  border-color: var(--blk);
 }
-
-/* Utility helpers */
-.bg-black { background: var(--black); color: var(--text-inverse); }
-.bg-yellow { background: var(--yellow); color: var(--black); }
-.text-yellow { color: var(--yellow); }
-.border-black { border-color: var(--black) !important; }
