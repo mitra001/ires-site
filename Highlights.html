@@ -7,19 +7,13 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header (same as above; mark Highlights active) -->
-  <header class="header">
+  <header class="header navbar--light">
     <div class="container navbar" role="navigation" aria-label="Main">
-      <a class="brand" href="index.html" aria-label="Site home">
-        <div>
-          <div class="brand__title">Undergraduate Research in Consumer Networking Technologies</div>
-          <small class="brand__subtitle">REU Site • University Program</small>
-        </div>
-      </a>
+      <a class="brand" href="index.html"><div><div class="brand__title">REU Site</div><small class="brand__subtitle">University Program</small></div></a>
       <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
       <nav id="navMenu" class="nav">
         <a href="index.html">Overview</a>
-        <a href="Highlights.html" class="active">Highlights</a>
+        <a class="active" href="Highlights.html">Highlights</a>
         <a href="Eligibility.html">Eligibility</a>
         <a href="Dates.html">Important Dates</a>
         <a href="Apply.html">Apply</a>
@@ -28,33 +22,29 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero section--highlight">
     <div class="container wrap">
-      <h1>Highlights</h1>
-      <p>What participants gain from the program.</p>
-      <div class="section"><a class="badge" href="Apply.html">Apply Now</a></div>
+      <h1>Program Highlights</h1>
+      <p>Add brief updates, achievements, and featured stories.</p>
     </div>
   </section>
 
   <main class="section">
     <div class="container grid">
-      <div class="col-12 card">
-        <ul class="list">
-          <li>Stipend (~$7,000), housing/meal support (as needed), and travel support.</li>
-          <li>Hands-on projects in consumer networking with experienced faculty and graduate mentors.</li>
-          <li>Topical lectures and seminars on research and graduate school preparation.</li>
-          <li>Opportunities to present at university forums and, when appropriate, conferences.</li>
-        </ul>
-        <p class="muted">Customize the amounts and opportunities per your program year.</p>
-      </div>
+      <article class="col-12 card card--accent">
+        <h2>Highlight Title</h2>
+        <p>Date • 2–4 sentence blurb. <a href="#">Read more</a></p>
+      </article>
+      <article class="col-12 card">
+        <h2>Another Highlight</h2>
+        <p>Date • Summary. <a href="#">More details</a></p>
+      </article>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer footer--light">
     <div class="container">
-      <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
-      <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
+      <div>&copy; <span id="year"></span> REU Site.</div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
