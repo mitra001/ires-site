@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.querySelector('#navToggle');
-  const nav = document.querySelector('#navMenu');
-  if (btn && nav){
-    btn.addEventListener('click', () => nav.classList.toggle('show'));
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
   }
-  // current year
-  const yearEl = document.querySelector('#year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 });
