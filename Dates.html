@@ -7,71 +7,50 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Header (mark Important Dates active) -->
-  <header class="header">
-    <div class="container navbar" role="navigation" aria-label="Main">
-      <a class="brand" href="index.html" aria-label="Site home">
-        <div>
-          <div class="brand__title">Undergraduate Research in Consumer Networking Technologies</div>
-          <small class="brand__subtitle">REU Site • University Program</small>
-        </div>
-      </a>
+  <header class="header navbar--light">
+    <div class="container navbar">
+      <a class="brand" href="index.html"><div><div class="brand__title">REU Site</div><small class="brand__subtitle">University Program</small></div></a>
       <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
       <nav id="navMenu" class="nav">
         <a href="index.html">Overview</a>
         <a href="Highlights.html">Highlights</a>
         <a href="Eligibility.html">Eligibility</a>
-        <a href="Dates.html" class="active">Important Dates</a>
+        <a class="active" href="Dates.html">Important Dates</a>
         <a href="Apply.html">Apply</a>
         <a href="Contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero section--highlight">
     <div class="container wrap">
       <h1>Important Dates</h1>
-      <div class="section"><a class="badge" href="Apply.html">Apply Now</a></div>
+      <p>Key milestones for applications and program timeline.</p>
     </div>
   </section>
 
   <main class="section">
     <div class="container grid">
-      <div class="col-12 card">
-        <h3>Application Deadlines</h3>
-        <div class="grid">
-          <div class="col-6">
-            <h4>Early application</h4>
-            <ul class="list">
-              <li><strong>Jan 31, 2025</strong> — Application deadline</li>
-              <li><strong>Feb 08, 2025</strong> — Notification of decision</li>
-              <li><strong>Feb 15, 2025</strong> — Confirmation of participation</li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <h4>Regular application</h4>
-            <ul class="list">
-              <li><strong>Mar 15, 2025</strong> — Application deadline</li>
-              <li><strong>Mar 23, 2025</strong> — Notification of decision</li>
-              <li><strong>Mar 31, 2025</strong> — Confirmation of participation</li>
-            </ul>
-          </div>
-        </div>
-        <h3>Program Dates</h3>
-        <ul class="list">
-          <li><strong>May 19, 2025</strong> — Program start</li>
-          <li><strong>Jul 25, 2025</strong> — Program end</li>
-        </ul>
-        <p class="muted">Update these dates each cycle.</p>
+      <div class="col-12 card card--accent">
+        <table>
+          <thead>
+            <tr><th>Milestone</th><th>Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Applications Open</td><td>Month DD, YYYY</td></tr>
+            <tr><td>Priority Deadline</td><td>Month DD, YYYY</td></tr>
+            <tr><td>Final Deadline</td><td>Month DD, YYYY</td></tr>
+            <tr><td>Program Start</td><td>Month DD, YYYY</td></tr>
+            <tr><td>Program End</td><td>Month DD, YYYY</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer footer--light">
     <div class="container">
-      <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
-      <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
+      <div>&copy; <span id="year"></span> REU Site.</div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
