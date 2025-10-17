@@ -4,16 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Apply • REU Site</title>
+  <!-- Base layout styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Theme overrides (Mizzou Gold & Black) -->
+  <link rel="stylesheet" href="assets/styles.css">
   <meta name="theme-color" content="#0A0A0A">
 </head>
 <body>
-  <!-- Header (mark Apply active) -->
-  <header class="header">
+  <!-- Header (Apply active) -->
+  <header class="header navbar--black">
     <div class="container navbar" role="navigation" aria-label="Main">
       <a class="brand" href="index.html" aria-label="Site home">
         <div>
-          <div class="brand__title">Undergraduate Research in Consumer Networking Technologies</div>
+          <div class="brand__title text-gold">Undergraduate Research in Consumer Networking Technologies</div>
           <small class="brand__subtitle">REU Site • University Program</small>
         </div>
       </a>
@@ -29,19 +32,32 @@
     </div>
   </header>
 
-  <section class="hero">
+  <!-- Hero: black background with Mizzou Gold text -->
+  <section class="hero bg-black">
     <div class="container wrap">
-      <h1>Instructions to Apply</h1>
-      <div class="section"><a class="badge" href="Dates.html">Check Dates</a></div>
+      <h1 class="text-gold">Instructions to Apply</h1>
+      <div class="section">
+        <a class="btn btn--gold" href="Dates.html">Check Dates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional callout: Mizzou Gold background with black text -->
+  <section class="bg-gold">
+    <div class="container wrap">
+      <p class="text-black"><strong>Reminder:</strong> Applications are reviewed on a rolling basis. Please verify deadlines on the <a href="Dates.html" class="text-black">Important Dates</a> page.</p>
     </div>
   </section>
 
   <main class="section">
     <div class="container grid">
-      <div class="col-12 card">
+      <div class="col-12 card card--accent">
         <ol class="list">
-          <li>Review <a href="Eligibility.html">Eligibility & Requirements</a> and <a href="Dates.html">Important Dates</a>.</li>
-          <li>Submit your application using the official portal (e.g., <a href="#" aria-disabled="true">NSF ETAP</a> link placeholder).</li>
+          <li>Review <a href="Eligibility.html">Eligibility &amp; Requirements</a> and <a href="Dates.html">Important Dates</a>.</li>
+          <li>
+            Submit your application using the official portal:
+            <a class="btn btn--black" href="#" aria-disabled="true">NSF ETAP (placeholder)</a>
+          </li>
           <li>For any issues with submission, see <a href="Contact.html">Contact Us</a>.</li>
         </ol>
         <p class="muted">Your application is complete only after all required materials are received.</p>
@@ -49,13 +65,14 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- Footer: black background with Mizzou Gold text -->
+  <footer class="footer footer--black">
     <div class="container">
       <div>&copy; <span id="year"></span> REU Site Template. All rights reserved.</div>
       <div class="muted">Sponsored By <span class="badge">NSF Award (placeholder)</span></div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
