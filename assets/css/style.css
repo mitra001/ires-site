@@ -26,7 +26,7 @@ body{
 
 /* Generic containers */
 .container{
-  max-width:1140px;
+  max-width:2050px;
   width:100%;
   margin-left:16px;     /* <<< left-align here */
   margin-right:auto;    /* keep fluid on the right */
@@ -102,14 +102,14 @@ body{
   padding:.5rem; border-bottom:1px solid var(--miz-black);
 }
 .nav-vertical{list-style:none;margin:0;padding:.25rem}
-.nav-vertical li{margin:.15rem 0}
+.nav-vertical li{margin:1rem 0}
 .nav-vertical a{
   display:block;
   text-decoration:none;
   color:var(--miz-black);
   background:#f8f8f8;
   border:1px solid var(--miz-black);
-  border-radius:8px;
+  border-radius:80px;
   padding:.55rem .75rem;
   font-weight:600;
 }
@@ -123,13 +123,138 @@ body{
 .content{
   background:var(--white);
   border:2px solid var(--miz-black);
-  border-radius:12px;
+  border-radius:20px;
   padding:1rem 1.2rem;
   box-shadow:0 1px 0 rgba(0,0,0,.06);
+  width: 100%
 }
-.content h1{margin-top:.25rem;font-size:1.6rem}
+.content h1{margin-top:2.25rem;font-size:2rem}
 .content h2{margin-top:1.25rem;font-size:1.25rem}
-.content p,.content li{color:var(--text-dim)}
+.content p {
+  font-size: 1.1rem;    /* default is ~16px; 1.1rem = ~17.6px */
+  line-height: 1.7;     /* improves readability */
+  color: var(--text-dim);
+}
+
+.content ul {
+  font-size: 1.1rem;           /* increase text size */
+  line-height: 1.8;            /* add breathing space */
+  padding-left: 1.5rem;        /* indent the list */
+}
+
+.content li {
+  margin-bottom: 0.7rem;       /* space between bullets */
+  list-style-type: disc;       /* classic solid bullet */
+}
+
+/* ================= Timeline Animation ================= */
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 40px;
+  border-left: 4px solid var(--miz-gold);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+.timeline-dot {
+  position: absolute;
+  left: -14px;
+  top: 0.3rem;
+  width: 13px;
+  height: 16px;
+  background: var(--miz-gold);
+  border-radius: 50%;
+  border: 1px solid var(--miz-black);
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: var(--miz-black);
+  margin-bottom: 1rem;
+}
+
+.timeline-content {
+  background: #fffdf5;
+  border: 1px solid var(--miz-gold);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= Contact Card Styling ================= */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #fffdf5;
+  border: 2px solid var(--miz-black);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.contact-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 100px;
+  border: 3px solid var(--miz-gold);
+  object-fit: cover;
+}
+
+.contact-info h2 {
+  margin: 0;
+  color: var(--miz-black);
+  font-size: 1.3rem;
+}
+
+.contact-info p {
+  margin: 0.4rem 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.contact-info a {
+  color: var(--miz-gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  color: var(--miz-black);
+  text-decoration: underline;
+}
+
+
+
 /* If you prefer blue links inside articles, uncomment:
 .content a{color:var(--link)}
 */
@@ -158,3 +283,97 @@ body{
   .nav.is-open{display:flex;flex-direction:column;gap:.75rem;padding:.75rem 0}
   .nav-toggle{display:inline-block}
 }
+
+/* ================= Footer: NSF Sponsor ================= */
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  color: var(--miz-gold);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.sponsor-text {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--miz-gold);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nsf-logo {
+  width: 200px;
+  height: auto;
+  margin-left: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
+
+.nsf-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px var(--miz-gold));
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+  .footer-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .footer-right {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ===== Footer: Centered NSF Sponsor (Dark Mode Style) ===== */
+.footer-centered {
+  width: 100%;
+  background: var(--miz-black);      /* solid black footer */
+  color: var(--white);               /* white text */
+  border-top: 4px solid var(--miz-gold);
+  border-bottom: 4px solid var(--miz-gold);
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-centered p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-centered a {
+  text-decoration: none;
+}
+
+.nsf-logo-center {
+  width: 100px;          /* adjust size as desired */
+  height: auto;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.nsf-logo-center:hover {
+  transform: scale(1.1);
+}
+
+

@@ -9,15 +9,17 @@
 <body>
 
   <!-- Header -->
-  <?-- copy the same header into every page -->
   <header class="header">
     <div class="container header-inner" role="navigation" aria-label="Main">
       <div class="brand" aria-label="Site title">
         <div class="brand__title" role="heading" aria-level="1">
           IRES: Advancing Research on Optimizing Collaborative Human-Mobile Robot Operations for Next-Generation Manufacturing and Service Systems
+        </div>
+      </div>
+    </div>
   </header>
 
- <!-- Layout shell -->
+  <!-- Layout shell -->
   <div class="container shell">
     <!-- Sidebar -->
     <aside class="sidebar" aria-label="Section Navigation">
@@ -27,24 +29,38 @@
         <li><a href="Eligibility.html">Eligibility</a></li>
         <li><a href="Dates.html">Dates</a></li>
         <li><a href="Apply.html">Apply</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Contact.html" class="active">Contact</a></li>
       </ul>
     </aside>
 
+    <!-- Main content -->
     <main class="content">
-      <h1>Contact</h1>
-      <p>Email: <a href="mailto:example@missouri.edu">example@missouri.edu</a></p>
-      <p>Address: University of Missouri, Columbia, MO</p>
+      <h1>Contact Us</h1>
+
+      <div class="contact-card">
+        <img src="assets/img/Fig3.jpeg" alt="Sharan Srinivas" class="contact-photo">
+        <div class="contact-info">
+          <h2>Dr. Sharan Srinivas</h2>
+          <p><strong>Associate Professor</strong><br>
+          Industrial & Systems Engineering, University of Missouri, Columbia</p>
+          <p>Email: <a href="mailto:srinivassh@missouri.edu">srinivassh@missouri.edu</a></p>
+          <p>Website: <a href="https://srinivas-sharan.github.io/" target="_blank">srinivas-sharan.github.io</a></p>
+        </div>
+      </div>
     </main>
   </div>
 
-  <footer class="footer">
-    <div class="container inner">
-      <div>&copy; <span id="year"></span> REU Site</div>
-      
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+ <footer class="footer-centered">
+  <p>
+    <strong>Sponsored By</strong>
+    <a href="https://www.nsf.gov/" target="_blank">
+      <img src="assets/img/Fig4.jpeg" alt="NSF Logo" class="nsf-logo-center">
+    </a>
+    <strong>Award CNS-#######</strong>
+  </p>
+</footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
