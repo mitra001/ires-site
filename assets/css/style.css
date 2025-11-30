@@ -376,4 +376,27 @@ body{
   transform: scale(1.1);
 }
 
+/* --- Image styling for faculty photos --- */
+.mentor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.mentor-card {
+  text-align: center;
+  max-width: 160px;
+}
+
+.mentor-photo {
+  width: 150px;           /* same width for all JPEG portraits */
+  height: 150px;          /* same height for all JPEG portraits */
+  object-fit: cover;      /* crop to fill the box without distortion */
+  border-radius: 10px;    /* consistent rounded corners */
+  display: block;
+  margin: 0 auto 0.5rem;  /* center image and add space above caption */
+}
+
+
 
